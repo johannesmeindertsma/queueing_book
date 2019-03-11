@@ -89,33 +89,43 @@ The visit ratios are, of course, $V_1= V_2 = V_3 = V_4$.
 \end{exercise}
 
 \begin{exercise}
-Zijm.Ex.3.1.3
-\begin{solution}
-We number  station a as 1, and so on.
-\begin{equation*}
-  P = 
-  \begin{pmatrix}
-     0 & 1 & 0 & 0 & 0 &0 \\
-     1/5 & 0 & 4/5 & 0 & 0 & 0\\
-     0& 0 & 0 & 1/3 & 2/3 & 0 \\
-     0 & 0 & 0 & 0 & 0 & 1\\
-     0 & 0 & 0 & 0 & 0 & 1\\
-     1 & 0 & 0 & 0 & 0 & 0\\
-  \end{pmatrix}.
-\end{equation*}
-We now solve for $V$ in the equation $V = VP$. Since, by
-definition, $V_1=1$, it suffices to express the other visit ratios in
-terms of $V_1$. From elementary linear algebra, the second column
-implies that $V_2 = V_1$, and the third that $V_3 = 4/5 V_2$, so that
-$V_3 = 4/5 V_1$. From the fourth column $V_4 = 1/3 V_3$, thus,
-$V_4 = 1/3 \cdot 4/5 V_1 = 4/15 V_1$.  From the fifth column
-$V_5 = 2/3 V_4$, hence $V_5 = 8/45 V_1$. Finally, from the sixth
-column, $V_6 = V_4+V_5$, hence $V_6 = (4/15 + 8/45)V_1$.
 
-For later courses on Markov chains, it is important to note the following.
-Write the visit ratio equation $V = VP$ as $V(1-P)=0$ where $1$ is the indicator matrix.
-Clearly, $V$ is a left eigenvector of the matrix $1-P$ with eigenvalue 0 (recall that $V(1-P) = 0 = 0\cdot V$).
-Thus, at least one row or column of the matrix $1-P$ is superfluous to solve for $V$.
+Zijm.Ex.3.1.3
+
+\begin{solution}
+
+We number station a as 1, and so on.
+
+\begin{equation*}
+
+  P =  \begin{pmatrix}
+
+     0 & 1 & 0 & 0 & 0 & 0 \\
+
+     1/5 & 0 & 4/5 & 0 & 0 & 0 \\
+
+     0 & 0 & 0 & 1/3 & 2/3 & 0\\
+
+     0 & 0 & 0 & 0 & 0 & 1 \\
+
+     0 & 0 & 0 & 0 & 0 & 1\\
+
+     1 & 0 & 0 & 0 & 0 & 0 \\
+
+  \end{pmatrix}.
+
+\end{equation*}
+\\
+We now solve for $V$ in the equation $V = VP$. Since, by
+definition, $V_6=1$ (station 6 is the load/unload station), it suffices to substitute in one for $V_6$ from the recursions we get by $V = VP$.  From elementary linear algebra (taking into account that $V_6=1$), the first column implies that $V_1 = 1/5 V_2 +1$ , the second column implies that $V_2 = V_1$, and the third that $V_3 = 4/5 V_2$, the fourth implies that $V_4 = 1/3 V_3$. From the fifth column $V_5 = 2/3 V_3$, thus, $V_1 = 1/5 V_2 + 1 = 1/5 V_1 + 1$ implies that $V_1 = V_2 = 5/4$. Then $V_3 = 4/5 \cdot 5/4 = 1$, and $V_4 = 1/3 \cdot 1 = 1/3$ and finally $V_5 = 2/3 \cdot 1 = 2/3$. Since we already knew $V_6$ all visit ratios are calculated. \\
+\\
+For later courses on Markov chains, it is important to note the following. Write the visit ratio equation $V = VP$ as $V(1-P)=0$ where
+$1$ is the identity matrix. Clearly, $V$ must be a left
+
+eigenvector of the matrix $1-P$ with eigenvalue 0 (recall that
+
+$V(1-P) = 0 = 0\cdot V$). Thus, at least one row or column of the matrix $1-P$ is superfluous to solve for $V$. 
+
 \end{solution}
 \end{exercise}
 
